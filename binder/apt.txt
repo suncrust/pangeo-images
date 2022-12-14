@@ -1,4 +1,5 @@
 vim
 git
 sudo
-
+r-base
+r-base-dev
