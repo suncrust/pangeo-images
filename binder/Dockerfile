@@ -1,2 +1,3 @@
-FROM pangeo/base-image:2022.07.13
+FROM pangeo/ml-notebook:latest
+# docker pull pangeo/ml-notebook:latest
 # We recommend using a specific tag above from https://github.com/pangeo-data/pangeo-docker-images/releases
