@@ -1,5 +1,7 @@
 FROM pangeo/ml-notebook:latest
 
+USER root
+
 RUN apt-get update --yes && \
     apt-get install --yes --no-install-recommends \
     fonts-dejavu \
