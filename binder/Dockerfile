@@ -31,20 +31,21 @@ RUN mamba install --quiet --yes \
     'r-shiny' \
     'r-tidyverse' \
     'unixodbc' && \
-    mamba clean --all -f -y && \
-    fix-permissions "${CONDA_DIR}" && \
-    fix-permissions "/home/${NB_USER}"
+    mamba clean --all -f -y 
+    # && \
+    # fix-permissions "${CONDA_DIR}" && \
+    # fix-permissions "/home/${NB_USER}"
 
 # `rpy2` and `r-tidymodels` are not easy to install under aarch64
-RUN set -x && \
-    arch=$(uname -m) && \
-    if [ "${arch}" == "x86_64" ]; then \
-        mamba install --quiet --yes \
-            'rpy2' \
-            'r-tidymodels' && \
-            mamba clean --all -f -y && \
-            fix-permissions "${CONDA_DIR}" && \
-            fix-permissions "/home/${NB_USER}"; \
-    fi;
+#  RUN set -x && \
+#      arch=$(uname -m) && \
+#      if [ "${arch}" == "x86_64" ]; then \
+#          mamba install --quiet --yes \
+#              'rpy2' \
+#              'r-tidymodels' && \
+#              mamba clean --all -f -y && \
+#              fix-permissions "${CONDA_DIR}" && \
+#              fix-permissions "/home/${NB_USER}"; \
+#      fi;
 # docker pull pangeo/ml-notebook:latest
 # We recommend using a specific tag above from https://github.com/pangeo-data/pangeo-docker-images/releases
