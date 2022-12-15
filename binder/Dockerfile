@@ -23,9 +23,9 @@ RUN apt-get update --yes && \
     fonts-dejavu \
     gfortran \
     gcc && \
-    sudo && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
-RUN sudo apt-get pip install pypotree
+RUN ap-get -y install sudo
+#RUN sudo apt-get pip install pypotree
 #RUN apt-get install cmake
 #RUN mamba install pypotree
     
