@@ -1,6 +1,7 @@
 FROM pangeo/ml-notebook:latest
 
-#Run pip install pypotree
+Run apt install sudo
+Run sudo pip install pypotree
 
 USER root
 RUN apt-get update --yes && \
@@ -32,7 +33,7 @@ RUN mamba install --quiet --yes \
     'r-shiny' \
     'r-tidyverse' \
     'unixodbc' && \
-    'r-lidr' && \
+    #'r-lidr' && \
     mamba clean --all -f -y 
     # && \
     # fix-permissions "${CONDA_DIR}" && \
