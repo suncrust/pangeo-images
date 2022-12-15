@@ -2,6 +2,8 @@ FROM pangeo/ml-notebook:latest
 
 USER root
 
+run conda install pypotree
+
 RUN apt-get update --yes && \
     apt-get install --yes --no-install-recommends \
     fonts-dejavu \
@@ -31,6 +33,7 @@ RUN mamba install --quiet --yes \
     'r-shiny' \
     'r-tidyverse' \
     'unixodbc' && \
+    'r-lidR' && \
     mamba clean --all -f -y 
     # && \
     # fix-permissions "${CONDA_DIR}" && \
