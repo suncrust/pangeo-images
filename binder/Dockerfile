@@ -15,7 +15,7 @@ ENV CONDA_ENV=notebook \
     CONDA_DIR=/srv/conda
     
 #RUN apt-get install sudo
-#RUN sudo pip install pypotree
+RUN pip install pypotree
 
 
 RUN apt-get update --yes && \
@@ -54,16 +54,16 @@ RUN mamba install --quiet --yes \
     # fix-permissions "/home/${NB_USER}"
 
 # `rpy2` and `r-tidymodels` are not easy to install under aarch64
-  RUN set -x && \
-     arch=$(uname -m) && \
-     if [ "${arch}" == "x86_64" ]; then \
-         mamba install --quiet --yes \
-             'rpy2' \
-             'r-tidymodels' && \
-             'lidr' && \
-             mamba clean --all -f -y && \
-             fix-permissions "${CONDA_DIR}" && \
-             fix-permissions "/home/${NB_USER}"; \
-      fi;
+#  RUN set -x && \
+#     arch=$(uname -m) && \
+#     if [ "${arch}" == "x86_64" ]; then \
+#         mamba install --quiet --yes \
+#             'rpy2' \
+#             'r-tidymodels' && \
+#             'lidr' && \
+#             mamba clean --all -f -y && \
+#             fix-permissions "${CONDA_DIR}" && \
+#             fix-permissions "/home/${NB_USER}"; \
+#      fi;
 # docker pull pangeo/ml-notebook:latest
 # We recommend using a specific tag above from https://github.com/pangeo-data/pangeo-docker-images/releases
