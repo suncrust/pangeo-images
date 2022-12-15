@@ -25,8 +25,8 @@ RUN apt-get update --yes && \
     gcc && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
-RUN apt-get install cmake
-RUN pip install pypotree
+#RUN apt-get install cmake
+RUN mamba install pypotree
     
  # R packages including IRKernel which gets installed globally.
 # r-e1071: dependency of the caret R package
