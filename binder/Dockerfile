@@ -15,7 +15,7 @@ ENV CONDA_ENV=notebook \
     CONDA_DIR=/srv/conda
     
 #RUN apt-get install sudo
-RUN apt-get cmake make
+RUN apt-get install cmake make
 RUN pip install pypotree
 
 
