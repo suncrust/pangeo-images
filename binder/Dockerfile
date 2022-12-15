@@ -2,7 +2,7 @@ FROM pangeo/ml-notebook:latest
 
 USER root
 
-run conda install pypotree
+Run pip install pypotree
 
 RUN apt-get update --yes && \
     apt-get install --yes --no-install-recommends \
