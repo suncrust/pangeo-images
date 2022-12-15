@@ -13,10 +13,12 @@ ENV CONDA_ENV=notebook \
     # LC_ALL=C.UTF-8 \
     # Install conda in the same place repo2docker does
     CONDA_DIR=/srv/conda
-    
-RUN apt-get install sudo
 
 USER root
+
+RUN apt-get install sudo
+
+
 
 RUN sudo apt-get pip install pypotree
 
