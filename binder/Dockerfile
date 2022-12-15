@@ -1,8 +1,6 @@
 FROM pangeo/ml-notebook:latest
 
-
-
-Run pip install pypotree
+#Run pip install pypotree
 
 USER root
 RUN apt-get update --yes && \
