@@ -32,7 +32,7 @@ RUN mamba install --quiet --yes \
     'r-shiny' \
     'r-tidyverse' \
     'unixodbc' && \
-    'lidR' && \
+    'r-lidr' && \
     mamba clean --all -f -y 
     # && \
     # fix-permissions "${CONDA_DIR}" && \
