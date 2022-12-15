@@ -15,8 +15,7 @@ ENV CONDA_ENV=notebook \
     CONDA_DIR=/srv/conda
     
 #RUN apt-get install sudo
-RUN apt-get install cmake make
-RUN pip install pypotree
+
 
 
 RUN apt-get update --yes && \
@@ -25,6 +24,9 @@ RUN apt-get update --yes && \
     gfortran \
     gcc && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
+
+RUN apt-get install cmake
+RUN pip install pypotree
     
  # R packages including IRKernel which gets installed globally.
 # r-e1071: dependency of the caret R package
