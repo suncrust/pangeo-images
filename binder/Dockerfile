@@ -2,17 +2,17 @@ FROM pangeo/ml-notebook:latest
 
 
 
-ENV CONDA_ENV=notebook \
-    # Set username, uid and gid (same as uid) of non-root user the container will be run as
-    NB_USER=jovyan \
-    NB_UID=1000 \
-    # Use /bin/bash as shell, not the default /bin/sh (arrow keys, etc don't work then)
-    # SHELL=/bin/bash \
-    # Setup locale to be UTF-8, avoiding gnarly hard to debug encoding errors
-    # LANG=C.UTF-8  \
-    # LC_ALL=C.UTF-8 \
-    # Install conda in the same place repo2docker does
-    CONDA_DIR=/srv/conda
+## ENV CONDA_ENV=notebook \
+#    # Set username, uid and gid (same as uid) of non-root user the container will be run as
+#    NB_USER=jovyan \
+#    NB_UID=1000 \
+#    # Use /bin/bash as shell, not the default /bin/sh (arrow keys, etc don't work then)
+#    # SHELL=/bin/bash \
+#    # Setup locale to be UTF-8, avoiding gnarly hard to debug encoding errors
+#    # LANG=C.UTF-8  \
+#    # LC_ALL=C.UTF-8 \
+#    # Install conda in the same place repo2docker does
+#    CONDA_DIR=/srv/conda
 
 USER root
 
@@ -24,7 +24,7 @@ RUN apt-get update --yes && \
     gfortran \
     gcc && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
-RUN apt-get -y install sudo
+# RUN apt-get -y install sudo
 #RUN sudo apt-get pip install pypotree
 #RUN apt-get install cmake
 #RUN mamba install pypotree
