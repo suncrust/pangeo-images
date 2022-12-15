@@ -1,7 +1,9 @@
 FROM pangeo/ml-notebook:latest
 
 USER root
-ENV # Set username, uid and gid (same as uid) of non-root user the container will be run as
+
+ENV CONDA_ENV=notebook \
+    # Set username, uid and gid (same as uid) of non-root user the container will be run as
     NB_USER=jovyan \
     NB_UID=1000 \
     # Use /bin/bash as shell, not the default /bin/sh (arrow keys, etc don't work then)
