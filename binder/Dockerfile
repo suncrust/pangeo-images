@@ -1,6 +1,6 @@
 FROM pangeo/ml-notebook:latest
 
-USER root
+
 
 ENV CONDA_ENV=notebook \
     # Set username, uid and gid (same as uid) of non-root user the container will be run as
@@ -14,9 +14,11 @@ ENV CONDA_ENV=notebook \
     # Install conda in the same place repo2docker does
     CONDA_DIR=/srv/conda
     
-#RUN apt-get install sudo
+RUN apt-get install sudo
 
+USER root
 
+RUN sudo apt-get pip install pypotree
 
 RUN apt-get update --yes && \
     apt-get install --yes --no-install-recommends \
@@ -26,7 +28,7 @@ RUN apt-get update --yes && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 #RUN apt-get install cmake
-RUN mamba install pypotree
+#RUN mamba install pypotree
     
  # R packages including IRKernel which gets installed globally.
 # r-e1071: dependency of the caret R package
