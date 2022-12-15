@@ -1,9 +1,11 @@
 FROM pangeo/ml-notebook:latest
 
+USER root
+
 Run apt install sudo
 Run sudo pip install pypotree
 
-USER root
+
 RUN apt-get update --yes && \
     apt-get install --yes --no-install-recommends \
     fonts-dejavu \
