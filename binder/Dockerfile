@@ -24,7 +24,7 @@ RUN apt-get update --yes && \
     gfortran \
     gcc && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
-RUN ap-get -y install sudo
+RUN apt-get -y install sudo
 #RUN sudo apt-get pip install pypotree
 #RUN apt-get install cmake
 #RUN mamba install pypotree
