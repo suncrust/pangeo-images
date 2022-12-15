@@ -16,19 +16,16 @@ ENV CONDA_ENV=notebook \
 
 USER root
 
-RUN apt-get install sudo
-
-
-
-RUN sudo apt-get pip install pypotree
+#RUN apt-get install sudo
 
 RUN apt-get update --yes && \
     apt-get install --yes --no-install-recommends \
     fonts-dejavu \
     gfortran \
     gcc && \
+    sudo && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
-
+RUN sudo apt-get pip install pypotree
 #RUN apt-get install cmake
 #RUN mamba install pypotree
     
