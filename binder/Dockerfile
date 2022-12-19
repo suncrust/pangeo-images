@@ -57,6 +57,8 @@ RUN mamba install --quiet --yes \
     # fix-permissions "${CONDA_DIR}" && \
     # fix-permissions "/home/${NB_USER}"
 
+RUN R -e "install.packages('lidR')"
+
 # `rpy2` and `r-tidymodels` are not easy to install under aarch64
 #  RUN set -x && \
 #     arch=$(uname -m) && \
